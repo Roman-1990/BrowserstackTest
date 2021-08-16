@@ -37,7 +37,7 @@ public class BrowserStackIosSampleTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Page console log should not have errors")
+    @DisplayName("Successful search in wikipedia android app")
     void searchTest() {
         step("Open url 'https://app-automate.browserstack.com'", () -> {
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
