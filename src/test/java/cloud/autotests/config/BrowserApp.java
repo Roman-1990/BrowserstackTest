@@ -8,8 +8,6 @@ import org.aeonbits.owner.Config;
         "classpath:config/app.properties"
 })
 public interface BrowserApp extends Config {
-    @Key("mobilePlatform")
-    String mobilePlatform();
 
     @Key("androidDevice")
     String androidDevice();
