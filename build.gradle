@@ -69,6 +69,6 @@ tasks.withType(Test) {
 
 task demowebshop(type: Test) {
     useJUnitPlatform {
-        includeTags 'selenide_android'
+        includeTags 'test'
     }
 }
