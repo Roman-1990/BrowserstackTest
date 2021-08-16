@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -39,15 +40,13 @@ public class BrowserStackIosSampleTests extends TestBase {
     @Test
     @DisplayName("Successful search in wikipedia android app")
     void searchTest() {
-        step("Open url 'https://app-automate.browserstack.com'", () -> {
+        step("Type search", () -> {
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
-            $$(MobileBy.id("org.wikipedia.alpha:id/page_list_container")).shouldHave(CollectionCondition.sizeGreaterThan(0));
+            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).val("BrowserStack");
         });
-        step("Navigate to first link at search results", () ->
-                $$(MobileBy.id("org.wikipedia.alpha:id/page_list_item_container")).first().click());
-        step("Check the title of the article", () ->
-                $(MobileBy.id("org.wikipedia.alpha:id/view_page_title_text")).shouldHave(text("GitHub")));
-        closeWebDriver();
+        step("Verify content found", () ->
+                $$(MobileBy.id("org.wikipedia.alpha:id/page_list_item_container"))
+                        .shouldHave(sizeGreaterThan(0)));
+
     }
 }
