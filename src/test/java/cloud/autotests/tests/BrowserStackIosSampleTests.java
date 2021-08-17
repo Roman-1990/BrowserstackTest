@@ -1,7 +1,6 @@
 package cloud.autotests.tests;
 
 import cloud.autotests.config.App;
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Configuration;
 import io.appium.java_client.MobileBy;
 import io.restassured.RestAssured;

@@ -3,7 +3,7 @@ package cloud.autotests.tests;
 import cloud.autotests.helpers.AllureAttachments;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import drivers.BrowserstackMobileDriver;
+import cloud.autotests.drivers.BrowserstackMobileDriver;
 import io.qameta.allure.junit5.AllureJunit5;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
