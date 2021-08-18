@@ -42,6 +42,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
             desiredCapabilities.setCapability("build", "Java Android");
             desiredCapabilities.setCapability("name", "first_test");
 
-            return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
+            return new AndroidDriver<>(getBrowserstackUrl(), desiredCapabilities);
         }
 }
