@@ -8,11 +8,12 @@ import static io.restassured.RestAssured.given;
 public class Browserstack {
     static BrowserApp config = ConfigFactory.create(BrowserApp.class, System.getProperties());
 
-    public static String videoUrl(String sessionId) {
-        return given()
+
+    public static void videoUrl(String sessionId) {
+        given()
                 .auth().basic(config.userLogin(), config.userKey())
                 .when()
-                .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId +".json")
+                .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId + ".json")
                 .then()
                 .statusCode(200)
                 .log().body()
