@@ -9,11 +9,11 @@ import org.aeonbits.owner.Config;
 })
 public interface BrowserApp extends Config {
 
-    @Key("androidDevice")
-    String androidDevice();
+    @Key("device")
+    String device();
 
-    @Key("androidVersion")
-    String androidVersion();
+    @Key("os_version")
+    String os_version();
 
     @Key("webUrl")
     String webUrl();
