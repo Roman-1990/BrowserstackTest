@@ -35,11 +35,5 @@ public class AllureAttachments {
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid","");
     }
-    public static void browserConsoleLogs() {
-        attachAsText(
-                "Browser console logs",
-                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
-        );
-    }
 
 }
