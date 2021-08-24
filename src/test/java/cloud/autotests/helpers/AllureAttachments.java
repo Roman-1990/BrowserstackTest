@@ -11,36 +11,19 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 
 
 public class AllureAttachments {
-    //    @Attachment(value = "Page source", type = "text/plain")
-//    public static void pageSource() {
-//        getWebDriver().getPageSource();
-//    }
-//
-//    @Attachment(value = "{attachName}", type = "image/png")
-//    public static void screenshotAs(String attachName) {
-//        ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
-//    }
-//
-//    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
-//    public static void attachVideo(String sessionId) {
-//        Browserstack.videoUrl(sessionId);
-//    }
-//
-//    public static String getSessionId() {
-//        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid","");
-//    }
 
     @Attachment(value = "{attachName}", type = "text/plain")
-    public static void attachAsText(String attachName, String message) {
+    public static String attachAsText(String attachName, String message) {
+        return message;
     }
 
-    @Attachment(value = "Page source", type = "text/plain")
+        @Attachment(value = "Page source", type = "text/plain")
     public static void pageSource() {
         getWebDriver().getPageSource();
     }
 
     @Attachment(value = "{attachName}", type = "image/png")
-    public static void screenshotAs() {
+    public static void screenshotAs(String attachName) {
         ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
@@ -50,13 +33,13 @@ public class AllureAttachments {
     }
 
     public static String getSessionId() {
-        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid","");
     }
-
     public static void browserConsoleLogs() {
         attachAsText(
                 "Browser console logs",
                 String.join("\n", Selenide.getWebDriverLogs(BROWSER))
         );
     }
+
 }

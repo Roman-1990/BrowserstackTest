@@ -35,7 +35,7 @@ public class TestBase {
     public void afterEach() {
         String sessionId = getSessionId();
 
-        AllureAttachments.screenshotAs();
+        AllureAttachments.screenshotAs("Last screenshot");
         AllureAttachments.pageSource();
 //        Attach.browserConsoleLogs();
 
