@@ -8,7 +8,7 @@ repositories {
 
 }
 
-def allureVersion = "2.13.9",
+def allureVersion = "2.13.8",
     selenideVersion = "5.22.2",
     junitVersion = "5.7.2"
 
