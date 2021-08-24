@@ -9,7 +9,7 @@ public class Browserstack {
     static BrowserApp config = ConfigFactory.create(BrowserApp.class, System.getProperties());
 
 
-    public static void videoUrl(String sessionId) {
+    public static String videoUrl(String sessionId) {
         given()
                 .auth().basic(config.userLogin(), config.userKey())
                 .when()
@@ -20,6 +20,8 @@ public class Browserstack {
                 .extract()
                 .response()
                 .path("automation_session.video_url");
+
+        return sessionId;
 
     }
 }
